@@ -1,10 +1,16 @@
 {
-  "products": [{
-      "fairy_sparklers": {
+  "products": [
+        {
           "id": "product0",
           "type": "type0",
           "name": "Fairy Sparklers",
           "description": "Multi-colored sparklers that are safe for any age."
-      }
-  }]
+        },
+        {
+        "id": "product1",
+        "type": "type1",
+        "name": "War Head",
+        "description": "Mushroom cloud that that effects all ages."
+        }
+  ]
 }

@@ -9,8 +9,11 @@ const domStringBuilder = (x) => {
     domString += '<div class="col-4">';
     domString += `<div id="${board.id}" class="card p-2">`;
     domString += '<div class="card-body">';
-    domString += `<h3 class="card-title">${board.name}</h3>`;
-    domString += `<h5>${board.type[0].description}<h5>`;
+    // domString += '<h3 class="card-title">**PRODUCT NAME**</h3>';
+    domString += `<h3>${board.type[0].description}<h3>`;
+    domString += `<h5>${board.name}</h5>`;
+    // console.error(board.type[0].detail);
+    domString += `<h5>${board.detail}</h5>`;
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
