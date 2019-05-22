@@ -1,4 +1,5 @@
 import axios from 'axios';
+import detailsData from './detailsData';
 
 
 const getTypesForEachCategory = categories => new Promise((resolve, reject) => {
@@ -11,12 +12,18 @@ const getTypesForEachCategory = categories => new Promise((resolve, reject) => {
         const categoryAndType = category;
         const matchingTypes = types.filter(type => type.category === category.id);
         categoryAndType.type = matchingTypes;
+        // detailsData.getDetailsForEachType(resp.data.types);
+        // console.error(types);
         // categoryAndType.name = detailsData.getDetailsForEachType(resp.data.types);
         // console.error(categoryAndType.name);
         return categoryAndType;
       });
-      // console.error(types[0]);
-      console.error(types.name);
+      // console.error(categoriesWithTypes);
+      detailsData.getDetailsForEachType(categoriesWithTypes)
+        .then((x) => {
+          const allData = x;
+          return allData;
+        });
       resolve(categoriesWithTypes);
     })
     .catch(err => reject(err));

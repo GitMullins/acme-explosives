@@ -14,6 +14,7 @@ const domStringBuilder = (x) => {
     domString += `<h5>${board.name}</h5>`;
     // console.error(board.type[0].detail);
     domString += `<h5>${board.detail}</h5>`;
+    console.error(board.type);
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
