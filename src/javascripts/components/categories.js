@@ -5,6 +5,7 @@ import typesData from '../helpers/data/typesData';
 
 const domStringBuilder = (x) => {
   let domString = '';
+  // console.error(x);
   x.forEach((board) => {
     domString += '<div class="col-4">';
     domString += `<div id="${board.id}" class="card p-2">`;
@@ -12,9 +13,9 @@ const domStringBuilder = (x) => {
     // domString += '<h3 class="card-title">**PRODUCT NAME**</h3>';
     domString += `<h3>${board.type[0].description}<h3>`;
     domString += `<h5>${board.name}</h5>`;
-    // console.error(board.type[0].detail);
-    domString += `<h5>${board.detail}</h5>`;
-    console.error(board.type);
+    domString += `<h5>${board.details}</h5>`;
+    console.error(board.details);
+    console.error(board);
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
@@ -26,6 +27,7 @@ const initCategories = () => {
   categoriesData.loadCategories()
     .then(resp => typesData.getTypesForEachCategory(resp.data.categories))
     .then((x) => {
+      // console.error(x[0]);
       domStringBuilder(x);
     })
     .catch(err => console.error('error from initBoards requests', err));

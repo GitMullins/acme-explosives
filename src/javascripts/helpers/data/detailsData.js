@@ -8,7 +8,7 @@ const getDetailsForEachType = types => new Promise((resolve, reject) => {
       const typesWithDetails = types.map((type) => {
         const typeAndDetail = type;
         const matchingDetails = products.filter(product => product.type === type.type[0].id);
-        typeAndDetail.type.detail = matchingDetails;
+        typeAndDetail.details = matchingDetails;
         // console.error(typeAndDetail);
         return typeAndDetail;
       });
