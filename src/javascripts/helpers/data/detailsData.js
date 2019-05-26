@@ -9,13 +9,11 @@ const getDetailsForEachType = types => new Promise((resolve, reject) => {
         const typeAndDetail = type;
         const matchingDetails = products.filter(product => product.type === type.type[0].id);
         typeAndDetail.details = matchingDetails;
-        // console.error(typeAndDetail);
         return typeAndDetail;
       });
       resolve(typesWithDetails);
     })
     .catch(err => reject(err));
 });
-
 
 export default { getDetailsForEachType };
